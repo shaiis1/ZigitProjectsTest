@@ -8,6 +8,6 @@ namespace Zigit_Backend.Interfaces
 {
     public interface IProjectsManager
     {
-        Task<ProjectsModel> GetByIDAsync(Guid id);
+        List<ProjectsModel> GetByIDAsync(Guid id);
     }
 }

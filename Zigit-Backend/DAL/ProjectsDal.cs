@@ -21,9 +21,9 @@ namespace Zigit_Backend.DAL
         #endregion
 
         #region Public Methods
-        public async Task<ProjectsModel> GetByIDAsync(Guid id)
+        public List<ProjectsModel> GetByIDAsync(Guid id)
         {
-            return await _zigitContext.Projects.FirstOrDefaultAsync(e => e.ID == id);
+            return  _zigitContext.Projects.Where(e => e.UserID == id).ToList();
         }
         #endregion
     }

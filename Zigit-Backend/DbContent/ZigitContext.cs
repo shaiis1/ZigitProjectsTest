@@ -26,22 +26,22 @@ namespace Zigit_Backend.DbContent
 
             #region UserSeed
             modelBuilder.Entity<UserModel>().HasData(
-                new UserModel { ID = shaiUserGuid, UserName = "Shai Test", Password = "1234", Team = "First Team", Avatar = "", JoinedAt = DateTime.Now });
+                new UserModel { ID = shaiUserGuid, UserName = "Shai Test", Password = "1234", Team = "First Team", Avatar = "https://www.pinterest.com/pin/823736588076106083/", JoinedAt = DateTime.Now });
             modelBuilder.Entity<UserModel>().HasData(
-                new UserModel { ID = yossiUserGuid, UserName = "Yossi Test", Password = "1212", Team = "First Team", Avatar = "", JoinedAt = DateTime.Now });
+                new UserModel { ID = yossiUserGuid, UserName = "Yossi Test", Password = "1212", Team = "First Team", Avatar = "https://www.pinterest.com/pin/823736588076106083/", JoinedAt = DateTime.Now });
             #endregion
 
             #region ProjectsSeed
-            modelBuilder.Entity<UserModel>().HasData(
+            modelBuilder.Entity<ProjectsModel>().HasData(
                 new ProjectsModel { ID = Guid.NewGuid(), Name = "Shai Test Project", BugsCount = 0, DurationInDays = 1, MadeDeadLine = true, Score = 100, UserID = shaiUserGuid });
-            modelBuilder.Entity<UserModel>().HasData(
+            modelBuilder.Entity<ProjectsModel>().HasData(
                 new ProjectsModel { ID = Guid.NewGuid(), Name = "Shai Test Project2", BugsCount = 4, DurationInDays = 14, MadeDeadLine = false, Score = 70, UserID = shaiUserGuid });
-            modelBuilder.Entity<UserModel>().HasData(
+            modelBuilder.Entity<ProjectsModel>().HasData(
                 new ProjectsModel { ID = Guid.NewGuid(), Name = "Shai Test Project3", BugsCount = 2, DurationInDays = 35, MadeDeadLine = true, Score = 90, UserID = shaiUserGuid });
 
-            modelBuilder.Entity<UserModel>().HasData(
+            modelBuilder.Entity<ProjectsModel>().HasData(
                 new ProjectsModel { ID = Guid.NewGuid(), Name = "Yossi Test Project", BugsCount = 6, DurationInDays = 12, MadeDeadLine = false, Score = 79, UserID = yossiUserGuid });
-            modelBuilder.Entity<UserModel>().HasData(
+            modelBuilder.Entity<ProjectsModel>().HasData(
                 new ProjectsModel { ID = Guid.NewGuid(), Name = "Yossi Test Project2", BugsCount = 4, DurationInDays = 7, MadeDeadLine = true, Score = 83, UserID = yossiUserGuid });
             #endregion
         }

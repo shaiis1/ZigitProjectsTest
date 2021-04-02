@@ -26,21 +26,22 @@ namespace Zigit_Backend.Controllers
 
         #region Public API Methods
 
+        
+        [Route("GetByID")]
         [HttpGet]
-        [Route("GetByID/{id}")]
-        [JWTValidation]
-        public IActionResult GetByID(Guid id)
+        //[JWTValidation]
+        public async Task<IActionResult> GetByID(Guid id)
         {
             try
             {
-                return Ok(_projectsManager.GetByIDAsync(id));
+                List<ProjectsModel> projects = _projectsManager.GetByIDAsync(id);
+                return Ok(projects);
             }
             catch (Exception ex)
             {
                 return BadRequest($"Bad Request Here {ex.Message}");
             }
         }
-
         #endregion
     }
 }

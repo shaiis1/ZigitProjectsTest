@@ -22,12 +22,12 @@ namespace Zigit_Backend.Managers
 
         #region Public Methods
 
-        public async Task<ProjectsModel> GetByIDAsync(Guid id)
+        public List<ProjectsModel> GetByIDAsync(Guid id)
         {
             if (id == Guid.Empty)
                 throw new ArgumentException("ID is not valid.");
 
-            return await _projectsDal.GetByIDAsync(id);
+            return  _projectsDal.GetByIDAsync(id);
         }
 
         #endregion
